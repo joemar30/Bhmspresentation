@@ -29,6 +29,24 @@ import slide27 from "../imports/Screenshot_2026-04-29_054805.png";
 import slide28 from "../imports/Screenshot_2026-04-29_054826.png";
 import slide29 from "../imports/Screenshot_2026-04-29_054838.png";
 import slide30 from "../imports/Screenshot_2026-04-29_055109.png";
+import slide31 from "../imports/Screenshot_2026-04-29_063115.png";
+import slide32 from "../imports/Screenshot_2026-04-29_063733.png";
+import slide33 from "../imports/Screenshot_2026-04-29_063718.png";
+import slide34 from "../imports/Screenshot_2026-04-29_063608.png";
+import slide35 from "../imports/Screenshot_2026-04-29_063554.png";
+import slide36 from "../imports/Screenshot_2026-04-29_063324.png";
+import slide37 from "../imports/Screenshot_2026-04-29_063313.png";
+import slide38 from "../imports/Screenshot_2026-04-29_063136.png";
+import slide39 from "../imports/Screenshot_2026-04-29_063125.png";
+import slide40 from "../imports/Screenshot_2026-04-29_055130.png";
+import slide41 from "../imports/Screenshot_2026-04-29_055150.png";
+import slide42 from "../imports/Screenshot_2026-04-29_055229.png";
+import slide43 from "../imports/Screenshot_2026-04-29_063449.png";
+import slide44 from "../imports/Screenshot_2026-04-29_063505.png";
+import slide45 from "../imports/Screenshot_2026-04-29_063523.png";
+
+
+
 
 const slides = [
   {
@@ -181,6 +199,81 @@ const slides = [
     title: "Cash In – Load Wallet Modal",
     description: "This modal appears when a tenant clicks to load their in-app wallet for paying rent or utilities. Tenants choose between GCash or Card/Stripe as the payment method, then enter the amount (e.g., ₱5,000). A security note confirms 'Your transaction is secured by GCash.' Clicking PROCEED initiates the payment process."
   },
+  {
+    id: 31, src: slide40, label: "Slide 31",
+    title: "GCash Receipt – Payment Confirmation",
+    description: "This is a sample GCash receipt generated after a successful 'Cash In' or rent payment. It displays the amount sent (₱5,000.00), the recipient (JPORD Boarding House), date and time, and a unique reference number. It also includes an environmental impact note for going digital."
+  },
+  {
+    id: 32, src: slide41, label: "Slide 32",
+    title: "Pay Rent / Bills Modal",
+    description: "This interface allows tenants to pay their outstanding rent or utility balance. Users can choose between GCash and Card/Stripe, select the bill type (e.g., Rent), and enter the amount to pay. The system ensures secure transactions through integrated payment gateways."
+  },
+  {
+    id: 33, src: slide42, label: "Slide 33",
+    title: "Stripe – Card Payment Integration",
+    description: "This is the Stripe/Link payment gateway integration. Tenants can securely pay their rent using their Mastercard or other credit/debit cards. The 'Sandbox' badge indicates this is a secure testing environment, ensuring the payment logic works perfectly before going live."
+  },
+  {
+    id: 34, src: slide31, label: "Slide 34",
+    title: "Staff Dashboard – Task Performance Analytics",
+    description: "This is the main dashboard for the staff members. It displays key performance metrics including Total Tasks (28), Pending (5), In Progress (0), Resolved (23), and Rejected (0). It also features a Task Performance Analytics chart for monitoring staff efficiency and workload trends."
+  },
+  {
+    id: 35, src: slide39, label: "Slide 35",
+    title: "Staff – My Profile",
+    description: "Staff profile management page. Staff members can view and update their personal information, including their profile photo and account details, ensuring their professional identity is correctly represented within the system."
+  },
+  {
+    id: 36, src: slide38, label: "Slide 36",
+    title: "Staff – Messaging & Support",
+    description: "Staff members can communicate with the System Admin or Property Owner via this chat interface. It facilitates internal communication within the management team, allowing staff to report issues or ask for guidance while performing their duties."
+  },
+  {
+    id: 37, src: slide37, label: "Slide 37",
+    title: "Staff – Assigned Complaints",
+    description: "This view shows complaints specifically assigned to the logged-in staff member (e.g., Janwin Umban). It includes details about the issue, its urgency status, and allows the staff to update the task status to Pending, In Progress, Resolved, or Delayed."
+  },
+  {
+    id: 38, src: slide36, label: "Slide 38",
+    title: "Staff – Document Management",
+    description: "The staff-facing document management portal. Staff members can upload new valid IDs (PH Valid IDs) for tenants and track the status of their own uploaded documents. This ensures a streamlined process for collecting and verifying tenant credentials."
+  },
+  {
+    id: 39, src: slide43, label: "Slide 39",
+    title: "Super Admin – System Overview Dashboard",
+    description: "This is the Super Admin's high-level dashboard. It provides a monitoring view of the entire platform's health, including Total Users (22), System Owners (1), Boarding Houses (4), and Total Rooms (9). It also features a System Distribution chart for real-time resource allocation."
+  },
+  {
+    id: 40, src: slide44, label: "Slide 40",
+    title: "Admin – Users Management",
+    description: "This panel allows administrators to manage all system users. It lists every account with their profile photo, username, full name, email, and role (Admin/Tenant). Admins can add new users, edit existing ones, or remove accounts to maintain system security."
+  },
+  {
+    id: 41, src: slide45, label: "Slide 41",
+    title: "Admin – User Activity Logs",
+    description: "The system activity log tracks every login and logout event. It records the user name, their role, the specific action taken, their IP address, and the exact time and date. This audit trail is essential for security monitoring and troubleshooting user sessions."
+  },
+  {
+    id: 42, src: slide35, label: "Slide 42",
+    title: "Admin – Messages & Feedback",
+    description: "The real-time chat interface for admins to communicate with tenants. This screen shows active conversations with tenants like Ken Magalona and Orlando Lao. Admins can provide support, answer questions, and handle requests directly through this integrated messaging system."
+  },
+  {
+    id: 43, src: slide34, label: "Slide 43",
+    title: "Admin – Complaints & Maintenance (Resolved)",
+    description: "The complaints management module for admins. This view shows 'No Active Issues', indicating that all maintenance requests and complaints have been resolved. The summary panel on the right tracks the current workload and provides access to the history of past issues."
+  },
+  {
+    id: 44, src: slide33, label: "Slide 44",
+    title: "Admin – Tenants Overview",
+    description: "A comprehensive list of all tenants registered in the system. It displays profile photos, names, email addresses, contact numbers, and their specific addresses. This centralized view allows admins to manage tenant information and track who is currently staying in the properties."
+  },
+  {
+    id: 45, src: slide32, label: "Slide 45",
+    title: "Admin – Document Management",
+    description: "The admin view for managing tenant documents. This table lists all uploaded credentials (NBI, Driver's License) with their upload date and approval status. Admins can view the documents or take action (Approve/Reject) to ensure all tenants are properly verified."
+  },
 ];
 
 export default function App() {
@@ -222,12 +315,14 @@ export default function App() {
     >
       {/* ── Top Bar ── */}
       {!isFullscreen && (
-        <div className="flex-shrink-0 flex items-center justify-between px-6 py-3 bg-gray-800 border-b border-gray-700">
-          <div className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
-            </svg>
-            <span className="text-white font-semibold text-sm">Boarding House System – Presentation</span>
+        <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 bg-gray-800/80 backdrop-blur-md border-b border-gray-700/50 sticky top-0 z-40">
+          <div className="flex items-center gap-3">
+            <div className="p-1.5 bg-orange-500/10 rounded-lg">
+              <svg className="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+              </svg>
+            </div>
+            <span className="text-white font-bold text-base tracking-tight">BHMS <span className="text-orange-400 font-normal">Presentation</span></span>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-gray-400 text-sm">{current + 1} / {slides.length}</span>
@@ -245,13 +340,13 @@ export default function App() {
       )}
 
       {/* ── Body ── */}
-      <div className="flex flex-1" style={{ overflow: "hidden" }}>
+      <div className="flex flex-1 overflow-hidden">
 
         {/* Thumbnail Sidebar */}
         {!isFullscreen && (
           <div
-            className="flex-shrink-0 border-r border-gray-700 overflow-y-auto flex flex-col gap-2 p-2"
-            style={{ width: 160, backgroundColor: "#1a1f2e" }}
+            className="flex-shrink-0 border-r border-gray-700/50 overflow-y-auto flex flex-col gap-3 p-3 scrollbar-hide"
+            style={{ width: 180, backgroundColor: "#0f131a" }}
           >
             {slides.map((s, i) => (
               <button
