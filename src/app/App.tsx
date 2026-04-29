@@ -317,8 +317,8 @@ export default function App() {
       {!isFullscreen && (
         <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 bg-gray-800/80 backdrop-blur-md border-b border-gray-700/50 sticky top-0 z-40">
           <div className="flex items-center gap-3">
-            <div className="p-1.5 bg-blue-500/10 rounded-lg">
-              <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="p-1.5 bg-blue-500/5 rounded-lg">
+              <svg className="w-5 h-5 text-blue-400/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             </div>
@@ -352,7 +352,7 @@ export default function App() {
               <button
                 key={s.id}
                 onClick={() => goTo(i)}
-                className={`relative w-full rounded-md overflow-hidden border-2 transition-all flex-shrink-0 ${
+                className={`relative w-full rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 ${
                   current === i
                     ? "border-blue-400 shadow-lg shadow-blue-900/40"
                     : "border-transparent hover:border-gray-500"
@@ -400,7 +400,7 @@ export default function App() {
                 key={current}
                 src={slide.src}
                 alt={slide.label}
-                style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: 8, boxShadow: "0 8px 32px rgba(0,0,0,0.5)", animation: "fadeIn 0.2s ease" }}
+                style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: 16, boxShadow: "0 8px 32px rgba(0,0,0,0.5)", animation: "fadeIn 0.2s ease" }}
               />
             )}
           </div>
@@ -415,10 +415,10 @@ export default function App() {
               <div className="flex items-start gap-3">
                 {/* Badge */}
                 <div
-                  className="flex-shrink-0 flex items-center justify-center rounded-lg border border-blue-500/50"
-                  style={{ width: 36, height: 36, backgroundColor: "rgba(37,99,235,0.15)", marginTop: 2 }}
+                  className="flex-shrink-0 flex items-center justify-center rounded-lg border border-blue-500/30"
+                  style={{ width: 36, height: 36, backgroundColor: "rgba(37,99,235,0.08)", marginTop: 2 }}
                 >
-                  <span style={{ color: "#60a5fa", fontSize: 13, fontWeight: 700 }}>{current + 1}</span>
+                  <span style={{ color: "#60a5fa", opacity: 0.7, fontSize: 13, fontWeight: 700 }}>{current + 1}</span>
                 </div>
                 {/* Text */}
                 <div>
