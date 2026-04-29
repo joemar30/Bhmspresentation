@@ -317,18 +317,18 @@ export default function App() {
       {!isFullscreen && (
         <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 bg-gray-800/80 backdrop-blur-md border-b border-gray-700/50 sticky top-0 z-40">
           <div className="flex items-center gap-3">
-            <div className="p-1.5 bg-orange-500/10 rounded-lg">
-              <svg className="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+            <div className="p-1.5 bg-blue-500/10 rounded-lg">
+              <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             </div>
-            <span className="text-white font-bold text-base tracking-tight">BHMS <span className="text-orange-400 font-normal">Presentation</span></span>
+            <span className="text-white font-bold text-base tracking-tight">BHMS <span className="text-blue-400 font-normal">System</span></span>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-gray-400 text-sm">{current + 1} / {slides.length}</span>
             <button
               onClick={() => setIsFullscreen(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-orange-500 hover:bg-orange-600 text-white text-xs rounded-md transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs rounded-md transition-colors"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -354,12 +354,12 @@ export default function App() {
                 onClick={() => goTo(i)}
                 className={`relative w-full rounded-md overflow-hidden border-2 transition-all flex-shrink-0 ${
                   current === i
-                    ? "border-orange-400 shadow-lg shadow-orange-900/40"
+                    ? "border-blue-400 shadow-lg shadow-blue-900/40"
                     : "border-transparent hover:border-gray-500"
                 }`}
               >
                 <img src={s.src} alt={s.label} className="w-full object-cover aspect-video" />
-                <div className={`absolute bottom-0 left-0 right-0 text-center py-0.5 text-xs ${current === i ? "bg-orange-500 text-white" : "bg-black/60 text-gray-300"}`}>
+                <div className={`absolute bottom-0 left-0 right-0 text-center py-0.5 text-xs ${current === i ? "bg-blue-600 text-white" : "bg-black/60 text-gray-300"}`}>
                   {i + 1}
                 </div>
               </button>
@@ -415,10 +415,10 @@ export default function App() {
               <div className="flex items-start gap-3">
                 {/* Badge */}
                 <div
-                  className="flex-shrink-0 flex items-center justify-center rounded-lg border border-orange-500/50"
-                  style={{ width: 36, height: 36, backgroundColor: "rgba(249,115,22,0.15)", marginTop: 2 }}
+                  className="flex-shrink-0 flex items-center justify-center rounded-lg border border-blue-500/50"
+                  style={{ width: 36, height: 36, backgroundColor: "rgba(37,99,235,0.15)", marginTop: 2 }}
                 >
-                  <span style={{ color: "#fb923c", fontSize: 13, fontWeight: 700 }}>{current + 1}</span>
+                  <span style={{ color: "#60a5fa", fontSize: 13, fontWeight: 700 }}>{current + 1}</span>
                 </div>
                 {/* Text */}
                 <div>
@@ -452,7 +452,7 @@ export default function App() {
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`rounded-full transition-all ${i === current ? "w-5 h-2 bg-orange-400" : "w-2 h-2 bg-gray-600 hover:bg-gray-400"}`}
+                className={`rounded-full transition-all ${i === current ? "w-5 h-2 bg-blue-400" : "w-2 h-2 bg-gray-600 hover:bg-gray-400"}`}
               />
             ))}
           </div>

@@ -1,11 +1,24 @@
+# BOARDING HOUSE MANAGEMENT SYSTEM
 
-  # Link Images for Presentation
+OVERVIEW
+Interactive presentation platform for the BHMS software ecosystem
+Designed for stakeholder demonstrations and internal reviews
 
-  This is a code bundle for Link Images for Presentation. The original project is available at https://www.figma.com/design/DhRG9D4LtjjmLHGwNmPlaZ/Link-Images-for-Presentation.
+TECHNICAL SETUP
+Follow these steps to deploy the local instance
 
-  ## Running the code
+STEP 1
+Install project dependencies
+npm install
 
-  Run `npm i` to install the dependencies.
+STEP 2
+Execute the development environment
+npm run dev
 
-  Run `npm run dev` to start the development server.
-  
+DEPLOYMENT
+To generate a production bundle use the command below
+npm run build
+
+ENVIRONMENT
+Built with Vite and React for optimal performance and scalability
+No external database is required for the presentation layer
