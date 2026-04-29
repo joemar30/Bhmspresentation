@@ -315,25 +315,25 @@ export default function App() {
     >
       {/* ── Top Bar ── */}
       {!isFullscreen && (
-        <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 bg-gray-800/80 backdrop-blur-md border-b border-gray-700/50 sticky top-0 z-40">
-          <div className="flex items-center gap-3">
-            <div className="p-1.5 bg-blue-500/5 rounded-lg">
-              <svg className="w-5 h-5 text-blue-400/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex-shrink-0 flex items-center justify-between px-4 md:px-6 py-3 md:py-4 bg-gray-800/80 backdrop-blur-md border-b border-gray-700/50 sticky top-0 z-40">
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="p-1 md:p-1.5 bg-blue-500/5 rounded-lg">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-blue-400/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             </div>
-            <span className="text-white font-bold text-base tracking-tight">BHMS <span className="text-blue-400 font-normal">System</span></span>
+            <span className="text-white font-bold text-sm md:text-base tracking-tight">BHMS <span className="text-blue-400 font-normal">System</span></span>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-gray-400 text-sm">{current + 1} / {slides.length}</span>
+          <div className="flex items-center gap-2 md:gap-4">
+            <span className="text-gray-400 text-xs md:text-sm whitespace-nowrap">{current + 1} / {slides.length}</span>
             <button
               onClick={() => setIsFullscreen(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs rounded-md transition-colors"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-[10px] md:text-xs rounded-md transition-colors"
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3 h-3 md:w-3.5 md:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
               </svg>
-              Present
+              <span className="hidden sm:inline">Present</span>
             </button>
           </div>
         </div>
@@ -342,10 +342,10 @@ export default function App() {
       {/* ── Body ── */}
       <div className="flex flex-1 overflow-hidden">
 
-        {/* Thumbnail Sidebar */}
+        {/* Thumbnail Sidebar - Hidden on Mobile */}
         {!isFullscreen && (
           <div
-            className="flex-shrink-0 border-r border-gray-700/50 overflow-y-auto flex flex-col gap-3 p-3 scrollbar-hide"
+            className="hidden md:flex flex-shrink-0 border-r border-gray-700/50 overflow-y-auto flex-col gap-3 p-3 scrollbar-hide"
             style={{ width: 180, backgroundColor: "#0f131a" }}
           >
             {slides.map((s, i) => (
@@ -371,25 +371,26 @@ export default function App() {
         <div className="flex-1 flex flex-col" style={{ overflow: "hidden", backgroundColor: "#0d1117" }}>
 
           {/* Slide Image */}
-          <div className="flex items-center justify-center bg-gray-950" style={{ flex: "1 1 0", overflow: "hidden", padding: "16px 16px 8px" }}>
+          <div className="flex items-center justify-center bg-[#0d1117] md:bg-gray-950 p-3 md:p-6" style={{ flex: "1 1 0", overflow: "hidden" }}>
             {isFullscreen ? (
               <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
                 <img
                   key={current}
                   src={slide.src}
                   alt={slide.label}
-                  style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", animation: "fadeIn 0.2s ease" }}
+                  className="max-w-full max-h-full object-contain animate-fade-in"
                 />
-                <button onClick={goPrev} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                <button onClick={goPrev} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 md:bg-black/60 hover:bg-black text-white flex items-center justify-center transition-all">
+                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                 </button>
-                <button onClick={goNext} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                <button onClick={goNext} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 md:bg-black/60 hover:bg-black text-white flex items-center justify-center transition-all">
+                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </button>
                 <button onClick={() => setIsFullscreen(false)} className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                {/* Responsive dots in fullscreen */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex items-center gap-2">
                   {slides.map((_, i) => (
                     <button key={i} onClick={() => goTo(i)} className={`rounded-full transition-all ${i === current ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/40 hover:bg-white/70"}`} />
                   ))}
@@ -400,35 +401,51 @@ export default function App() {
                 key={current}
                 src={slide.src}
                 alt={slide.label}
-                style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: 16, boxShadow: "0 8px 32px rgba(0,0,0,0.5)", animation: "fadeIn 0.2s ease" }}
+                className="max-w-full max-h-full object-contain rounded-xl md:rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.4)] animate-fade-in border border-gray-700/30"
               />
             )}
           </div>
 
-          {/* ── Description Box ── always visible below the image */}
+          {/* ── Description Box ── */}
           {!isFullscreen && (
             <div
               key={`desc-${current}`}
-              className="flex-shrink-0 border-t border-gray-700"
-              style={{ backgroundColor: "#141927", padding: "14px 20px", animation: "fadeIn 0.3s ease" }}
+              className="flex-shrink-0 border-t border-gray-800 md:border-gray-700 overflow-y-auto bg-[#141927]/90 backdrop-blur-xl p-4 md:p-5"
+              style={{ maxHeight: "40%", animation: "fadeIn 0.3s ease" }}
             >
-              <div className="flex items-start gap-3">
-                {/* Badge */}
-                <div
-                  className="flex-shrink-0 flex items-center justify-center rounded-lg border border-blue-500/30"
-                  style={{ width: 36, height: 36, backgroundColor: "rgba(37,99,235,0.08)", marginTop: 2 }}
-                >
-                  <span style={{ color: "#60a5fa", opacity: 0.7, fontSize: 13, fontWeight: 700 }}>{current + 1}</span>
-                </div>
-                {/* Text */}
-                <div>
-                  <p style={{ color: "#ffffff", fontSize: 14, fontWeight: 600, marginBottom: 4 }}>
+              <div className="flex flex-col md:flex-row items-start gap-3 md:gap-4 max-w-4xl mx-auto">
+                
+                {/* Mobile Title Row (Badge + Title inline) */}
+                <div className="flex items-center gap-3 w-full md:w-auto md:hidden">
+                  <div className="flex-shrink-0 flex items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10 w-9 h-9">
+                    <span className="text-blue-400 text-sm font-bold">{current + 1}</span>
+                  </div>
+                  <h3 className="text-white text-sm font-bold leading-tight flex-1">
                     {slide.title}
-                  </p>
-                  <p style={{ color: "#9ca3af", fontSize: 12.5, lineHeight: 1.65 }}>
+                  </h3>
+                </div>
+
+                {/* Desktop Badge */}
+                <div className="hidden md:flex flex-shrink-0 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10 w-10 h-10 mt-1">
+                  <span className="text-blue-400 text-sm font-bold">{current + 1}</span>
+                </div>
+
+                {/* Text Content */}
+                <div className="flex-1 w-full mt-1 md:mt-0">
+                  {/* Desktop Title */}
+                  <h3 className="hidden md:block text-white text-base font-semibold mb-2 leading-tight">
+                    {slide.title}
+                  </h3>
+                  
+                  {/* The Description Text - Spans full width, strictly justified */}
+                  <p 
+                    className="text-gray-300 text-[12px] md:text-[13.5px] leading-relaxed text-justify hyphens-auto break-words md:text-left md:hyphens-none"
+                    style={{ textJustify: "inter-word" }}
+                  >
                     {slide.description}
                   </p>
                 </div>
+
               </div>
             </div>
           )}
@@ -437,41 +454,57 @@ export default function App() {
 
       {/* ── Bottom Nav ── */}
       {!isFullscreen && (
-        <div className="flex-shrink-0 flex items-center justify-center gap-4 px-6 py-3 bg-gray-800 border-t border-gray-700">
+        <div className="flex-shrink-0 flex items-center justify-between md:justify-center gap-2 md:gap-6 px-4 md:px-6 py-2 md:py-4 bg-gray-800 border-t border-gray-700">
           <button
             onClick={goPrev}
             disabled={current === 0}
-            className="flex items-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-30 disabled:cursor-not-allowed text-white text-sm rounded-md transition-colors"
+            className="flex items-center gap-1 px-3 py-1.5 md:px-4 md:py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-30 disabled:cursor-not-allowed text-white text-xs md:text-sm rounded-lg transition-colors"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-            Previous
+            <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+            <span className="hidden sm:inline">Prev</span>
           </button>
 
-          <div className="flex items-center gap-1.5">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                className={`rounded-full transition-all ${i === current ? "w-5 h-2 bg-blue-400" : "w-2 h-2 bg-gray-600 hover:bg-gray-400"}`}
-              />
-            ))}
+          {/* Smarter Pagination: Progress bar on mobile, dots on desktop */}
+          <div className="flex-1 flex flex-col items-center max-w-[200px] md:max-w-none">
+            <div className="hidden md:flex items-center gap-1.5">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i)}
+                  className={`rounded-full transition-all ${i === current ? "w-5 h-2 bg-blue-400" : "w-1.5 h-1.5 bg-gray-600 hover:bg-gray-400"}`}
+                />
+              ))}
+            </div>
+            {/* Mobile Progress Bar */}
+            <div className="md:hidden w-full flex flex-col gap-1 items-center">
+               <div className="w-full bg-gray-700 h-1 rounded-full overflow-hidden">
+                  <div 
+                    className="bg-blue-500 h-full transition-all duration-300" 
+                    style={{ width: `${((current + 1) / slides.length) * 100}%` }}
+                  />
+               </div>
+               <span className="text-[10px] text-gray-500 font-medium uppercase tracking-wider">Slide {current + 1} of {slides.length}</span>
+            </div>
           </div>
 
           <button
             onClick={goNext}
             disabled={current === slides.length - 1}
-            className="flex items-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-30 disabled:cursor-not-allowed text-white text-sm rounded-md transition-colors"
+            className="flex items-center gap-1 px-3 py-1.5 md:px-4 md:py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-30 disabled:cursor-not-allowed text-white text-xs md:text-sm rounded-lg transition-colors"
           >
-            Next
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            <span className="hidden sm:inline">Next</span>
+            <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
           </button>
         </div>
       )}
 
       <style>{`
         @keyframes fadeIn {
-          from { opacity: 0; transform: scale(0.98); }
-          to   { opacity: 1; transform: scale(1); }
+          from { opacity: 0; transform: translateY(4px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}</style>
     </div>
